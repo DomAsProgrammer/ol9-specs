@@ -1,6 +1,6 @@
 Name:           perl-Try
 Version:        0.03
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Try - nicer exception handling syntax
 
 License:        MIT
@@ -8,7 +8,7 @@ URL:            https://metacpan.org/pod/Try
 Source0:        https://cpan.metacpan.org/authors/id/D/DO/DOY/Try-%{version}.tar.gz
 
 #BuildArch:      
-BuildRequires:  perl
+BuildRequires:  perl >= 5.14
 BuildRequires:  perl-devel
 BuildRequires:  perl-generators
 # Correct for lots of packages, other common choices include eg. Module::Build
@@ -21,6 +21,7 @@ BuildRequires:  perl(File::Find)
 BuildRequires:  perl(File::Temp)
 BuildRequires:  perl(Test::More)
 
+Requires:  perl >= 5.14
 Requires:  perl(Devel::CallParser)
 Requires:  perl(Exporter)
 Requires:  perl(Try::Tiny)
@@ -75,5 +76,7 @@ make test
 
 
 %changelog
-* Tue Nov 07 2023 Dominik Bernhardt <domasprogrammer@gmail.com> - 0.03
+* Tue Nov 07 2023 Dominik Bernhardt <domasprogrammer@gmail.com> - 0.03-1
 - Basic Perl type package
+* Sat Feb 24 2024 Dominik Bernhardt <domasprogrammer@gmail.com> - 0.03-2
+- Better Requriements (Perl version is checked now)

@@ -1,6 +1,6 @@
 Name:           perl-Devel-CallParser
 Version:        0.002
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Devel::CallParser - custom parsing attached to subroutines
 
 License:        perl_5
@@ -8,7 +8,7 @@ URL:            https://metacpan.org/pod/Devel::CallParser
 Source0:        https://cpan.metacpan.org/authors/id/Z/ZE/ZEFRAM/Devel-CallParser-%{version}.tar.gz
 
 #BuildArch:      
-BuildRequires:  perl
+BuildRequires:  perl >= 5.11.2
 BuildRequires:  perl-devel
 BuildRequires:  perl-generators
 # Correct for lots of packages, other common choices include eg. Module::Build
@@ -20,6 +20,7 @@ BuildRequires:  perl(Cwd)
 BuildRequires:  perl(File::Spec)
 BuildRequires:  perl(CPAN)
 
+Requires:  perl >= 5.11.2
 Requires:  perl(Devel::CallChecker)
 Requires:  perl(:MODULE_COMPAT_%(eval "`%{__perl} -V:version`"; echo $version))
 
@@ -62,5 +63,7 @@ make test
 
 
 %changelog
-* Tue Nov 07 2023 Dominik Bernhardt <domasprogrammer@gmail.com> - 0.002
+* Tue Nov 07 2023 Dominik Bernhardt <domasprogrammer@gmail.com> - 0.002-1
 - Basic Perl type package
+* Sat Feb 24 2024 Dominik Bernhardt <domasprogrammer@gmail.com> - 0.002-2
+- Better Requriements (Perl version is checked now)

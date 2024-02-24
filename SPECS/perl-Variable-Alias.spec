@@ -1,6 +1,6 @@
 Name:           perl-Variable-Alias
 Version:        0.01
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Variable::Alias - Alias any variable to any other variable
 
 License:        unknown
@@ -8,13 +8,14 @@ URL:            https://metacpan.org/release/BRENTDAX/Variable-Alias-0.01/view/A
 Source0:        https://cpan.metacpan.org/authors/id/B/BR/BRENTDAX/Variable-Alias-%{version}.tar.gz
 
 BuildArch:      noarch
-BuildRequires:  perl
+BuildRequires:  perl >= 5.8.0
 BuildRequires:  perl-generators
 # Correct for lots of packages, other common choices include eg. Module::Build
 BuildRequires:  perl(ExtUtils::MakeMaker)
 BuildRequires:  perl(Switch)
 BuildRequires:  perl(Test::More)
 
+Requires:  perl >= 5.8.0
 Requires:  perl(Switch)
 Requires:  perl(Test::More)
 Requires:  perl(:MODULE_COMPAT_%(eval "`%{__perl} -V:version`"; echo $version))
@@ -58,5 +59,7 @@ make test
 
 
 %changelog
-* Tue Nov 07 2023 Dominik Bernhardt <domasprogrammer@gmail.com> - 0.01
+* Tue Nov 07 2023 Dominik Bernhardt <domasprogrammer@gmail.com> - 0.01-1
 - Basic Perl type package
+* Sat Feb 24 2024 Dominik Bernhardt <domasprogrammer@gmail.com> - 0.01-2
+- Better Requriements (Perl version is checked now)

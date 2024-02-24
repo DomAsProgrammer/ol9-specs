@@ -1,6 +1,6 @@
 Name:           perl-IPC-LockTicket
 Version:        2.1
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        IPC::LockTicket - Interprocess communication via Storable library
 
 License:        GPLv3
@@ -9,7 +9,7 @@ Source0:        IPC-LockTicket-%{version}.tar.xz
 
 BuildArch:      noarch
 
-BuildRequires:  perl >= 5.32.1
+BuildRequires:  perl >= 5.18.0
 BuildRequires:  perl-devel
 BuildRequires:  perl-generators
 # Correct for lots of packages, other common choices include eg. Module::Build
@@ -20,6 +20,7 @@ BuildRequires:  perl(Cwd)
 BuildRequires:  perl(File::Spec)
 BuildRequires:  perl(CPAN)
 
+Requires:  perl >= 5.18.0
 Requires:  perl(Storable)
 Requires:  perl(Try)
 Requires:  perl(boolean)
@@ -68,3 +69,7 @@ make test
 %changelog
 * Tue Nov 07 2023 Dominik Bernhardt <domasprogrammer@gmail.com> - 1.2.5
 - First init.
+* Fri Feb 23 2024 Dominik Bernhardt <domasprogrammer@gmail.com> - 2.1-1
+- Renamed from perl-IPC-Lockable
+* Sat Feb 24 2024 Dominik Bernhardt <domasprogrammer@gmail.com> - 2.1-2
+- Better Requriements (Perl version is checked now)
