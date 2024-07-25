@@ -1,11 +1,12 @@
-Name:           perl-Devel-CallParser
+%define _tarball Devel-CallParser
+Name:           perl-%{_tarball}
 Version:        0.002
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        Devel::CallParser - custom parsing attached to subroutines
 
 License:        perl_5
 URL:            https://metacpan.org/pod/Devel::CallParser
-Source0:        https://cpan.metacpan.org/authors/id/Z/ZE/ZEFRAM/Devel-CallParser-%{version}.tar.gz
+Source0:        https://cpan.metacpan.org/authors/id/Z/ZE/ZEFRAM/%{_tarball}-%{version}.tar.gz
 
 #BuildArch:      
 BuildRequires:  perl >= 5.11.2
@@ -32,7 +33,7 @@ This module provides a C API, for XS modules, concerned with custom parsing. It 
 This module provides the implementation of the functions at runtime. It also, at compile time, supplies the C header file and link library which provide access to the functions. In normal use, "callparser0_h"/"callparser1_h" and "callparser_linkable" should be called at build time (not authoring time) for the module that wishes to use the C functions.
 
 %prep
-%autosetup -n Devel-CallParser-%{version}
+%autosetup -n %{_tarball}-%{version}
 
 
 %build
@@ -63,7 +64,9 @@ make test
 
 
 %changelog
-* Tue Nov 07 2023 Dominik Bernhardt <domasprogrammer@gmail.com> - 0.002-1
-- Basic Perl type package
+* Thu Mar 14 2024 Dominik Bernhardt <domasprogrammer@gmail.com> - 0.002-3
+- SPEC file improvements
 * Sat Feb 24 2024 Dominik Bernhardt <domasprogrammer@gmail.com> - 0.002-2
 - Better Requriements (Perl version is checked now)
+* Tue Nov 07 2023 Dominik Bernhardt <domasprogrammer@gmail.com> - 0.002-1
+- Basic Perl type package

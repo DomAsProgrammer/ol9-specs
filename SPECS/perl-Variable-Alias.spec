@@ -1,11 +1,12 @@
-Name:           perl-Variable-Alias
+%define _tarball Variable-Alias
+Name:           perl-%{_tarball}
 Version:        0.01
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        Variable::Alias - Alias any variable to any other variable
 
 License:        unknown
 URL:            https://metacpan.org/release/BRENTDAX/Variable-Alias-0.01/view/Alias.pm
-Source0:        https://cpan.metacpan.org/authors/id/B/BR/BRENTDAX/Variable-Alias-%{version}.tar.gz
+Source0:        https://cpan.metacpan.org/authors/id/B/BR/BRENTDAX/%{_tarball}-%{version}.tar.gz
 
 BuildArch:      noarch
 BuildRequires:  perl >= 5.8.0
@@ -28,7 +29,7 @@ There are various ways to alias one variable to another in Perl. The most popula
 Variable::Alias changes all that. It uses a tie to provide One True Way to alias a variable.
 
 %prep
-%autosetup -n Variable-Alias-%{version}
+%autosetup -n %{_tarball}-%{version}
 
 
 %build
@@ -59,7 +60,9 @@ make test
 
 
 %changelog
-* Tue Nov 07 2023 Dominik Bernhardt <domasprogrammer@gmail.com> - 0.01-1
-- Basic Perl type package
+* Thu Mar 14 2024 Dominik Bernhardt <domasprogrammer@gmail.com> - 0.01-3
+- SPEC file improvements
 * Sat Feb 24 2024 Dominik Bernhardt <domasprogrammer@gmail.com> - 0.01-2
 - Better Requriements (Perl version is checked now)
+* Tue Nov 07 2023 Dominik Bernhardt <domasprogrammer@gmail.com> - 0.01-1
+- Basic Perl type package

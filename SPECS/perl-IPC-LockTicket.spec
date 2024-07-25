@@ -1,11 +1,12 @@
-Name:           perl-IPC-LockTicket
-Version:        2.1
-Release:        2%{?dist}
+%define _tarball IPC-LockTicket
+Name:           perl-%{_tarball}
+Version:        2.3
+Release:        1%{?dist}
 Summary:        IPC::LockTicket - Interprocess communication via Storable library
 
 License:        GPLv3
 URL:            https://github.com/DomAsProgrammer/perl-IPC-LockTicket
-Source0:        IPC-LockTicket-%{version}.tar.xz
+Source0:        https://github.com/DomAsProgrammer/perl-IPC-LockTicket/raw/main/%{_tarball}-%{version}.tar.xz
 
 BuildArch:      noarch
 
@@ -21,6 +22,8 @@ BuildRequires:  perl(File::Spec)
 BuildRequires:  perl(CPAN)
 
 Requires:  perl >= 5.18.0
+Requires:  perl(Exporter)
+Requires:  perl(Carp)
 Requires:  perl(Storable)
 Requires:  perl(Try)
 Requires:  perl(boolean)
@@ -36,7 +39,7 @@ IPC::LockTicket is a OO library to share (IPC) locks/token via the Storeable lib
 
 
 %prep
-%autosetup -n IPC-LockTicket-%{version}
+%autosetup -n %{_tarball}-%{version}
 
 
 %build
@@ -67,9 +70,16 @@ make test
 
 
 %changelog
-* Tue Nov 07 2023 Dominik Bernhardt <domasprogrammer@gmail.com> - 1.2.5
-- First init.
-* Fri Feb 23 2024 Dominik Bernhardt <domasprogrammer@gmail.com> - 2.1-1
-- Renamed from perl-IPC-Lockable
+* Thu Jul 25 2024 Dominik Bernhardt <domasprogrammer@gmail.com> - 2.3-1
+- Used END block to properly end the program and undef elements
+ and clean up files.
+* Thu Mar 14 2024 Dominik Bernhardt <domasprogrammer@gmail.com> - 2.2-1
+- Implemented Carp and Exporter
+* Thu Mar 14 2024 Dominik Bernhardt <domasprogrammer@gmail.com> - 2.1-3
+- SPEC file improvements
 * Sat Feb 24 2024 Dominik Bernhardt <domasprogrammer@gmail.com> - 2.1-2
 - Better Requriements (Perl version is checked now)
+* Fri Feb 23 2024 Dominik Bernhardt <domasprogrammer@gmail.com> - 2.1-1
+- Renamed from perl-IPC-Lockable
+* Tue Nov 07 2023 Dominik Bernhardt <domasprogrammer@gmail.com> - 1.2.5
+- First init.

@@ -1,11 +1,12 @@
-Name:           perl-Try
+%define _tarball Try
+Name:           perl-%{_tarball}
 Version:        0.03
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        Try - nicer exception handling syntax
 
 License:        MIT
 URL:            https://metacpan.org/pod/Try
-Source0:        https://cpan.metacpan.org/authors/id/D/DO/DOY/Try-%{version}.tar.gz
+Source0:        https://cpan.metacpan.org/authors/id/D/DO/DOY/%{_tarball}-%{version}.tar.gz
 
 #BuildArch:      
 BuildRequires:  perl >= 5.14
@@ -45,7 +46,7 @@ This module implements a try/catch/finally statement. It is based heavily on (an
 
 
 %prep
-%autosetup -n Try-%{version}
+%autosetup -n %{_tarball}-%{version}
 
 
 %build
@@ -76,7 +77,9 @@ make test
 
 
 %changelog
-* Tue Nov 07 2023 Dominik Bernhardt <domasprogrammer@gmail.com> - 0.03-1
-- Basic Perl type package
+* Thu Mar 14 2024 Dominik Bernhardt <domasprogrammer@gmail.com> - 0.03-3
+- SPEC file improvements
 * Sat Feb 24 2024 Dominik Bernhardt <domasprogrammer@gmail.com> - 0.03-2
 - Better Requriements (Perl version is checked now)
+* Tue Nov 07 2023 Dominik Bernhardt <domasprogrammer@gmail.com> - 0.03-1
+- Basic Perl type package

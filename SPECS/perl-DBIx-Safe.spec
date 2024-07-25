@@ -1,11 +1,12 @@
-Name:           perl-DBIx-Safe
+%define _tarball DBIx-Safe
+Name:           perl-%{_tarball}
 Version:        1.2.5
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        DBIx::Safe - Safer access to your database through a DBI database handle
 
 License:        BSD
 URL:            https://metacpan.org/pod/DBIx::Safe
-Source0:        https://cpan.metacpan.org/authors/id/T/TU/TURNSTEP/DBIx-Safe-%{version}.tar.gz
+Source0:        https://cpan.metacpan.org/authors/id/T/TU/TURNSTEP/%{_tarball}-%{version}.tar.gz
 
 BuildArch:      noarch
 
@@ -37,7 +38,7 @@ By default, nothing is allowed to run at all. There are many things you can cont
 
 
 %prep
-%autosetup -n DBIx-Safe-%{version}
+%autosetup -n %{_tarball}-%{version}
 
 
 %build
@@ -68,5 +69,7 @@ make test
 
 
 %changelog
-* Tue Nov 07 2023 Dominik Bernhardt <domasprogrammer@gmail.com> - 1.2.5
+* Thu Jul 25 2024 Dominik Bernhardt <domasprogrammer@gmail.com> - 1.2.5-2
+- SPEC improvements
+* Tue Nov 07 2023 Dominik Bernhardt <domasprogrammer@gmail.com> - 1.2.5-1
 - Basic Perl type package
